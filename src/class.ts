@@ -2,7 +2,8 @@ import { embed } from "@aws/dynamodb-data-mapper";
 import {
   attribute,
   hashKey,
-  table
+  table,
+  rangeKey
 } from "@aws/dynamodb-data-mapper-annotations";
 
 class Comment {
@@ -13,13 +14,16 @@ class Comment {
   @attribute() text?: string;
 }
 
-@table("posts")
+@table("TESTEST")
 class BlogPost {
   @hashKey() id: string;
 
   @attribute() author?: string;
 
   @attribute() postedAt?: Date;
+
+  @attribute({ defaultProvider: () => new Date() })
+  createdAt: Date;
 
   @attribute() text?: string;
 
