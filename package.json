@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "prestart": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,14 @@
   "bugs": {
     "url": "https://github.com/jinhokong/dynamo-data-mapper-example/issues"
   },
-  "homepage": "https://github.com/jinhokong/dynamo-data-mapper-example#readme"
+  "homepage": "https://github.com/jinhokong/dynamo-data-mapper-example#readme",
+  "dependencies": {
+    "@aws/dynamodb-data-mapper": "^0.6.1",
+    "@aws/dynamodb-data-mapper-annotations": "^0.6.1",
+    "@types/uuid": "^3.4.3",
+    "aws-sdk": "^2.267.1",
+    "dotenv": "^6.0.0",
+    "typescript": "^2.9.2",
+    "uuid": "^3.3.2"
+  }
 }
