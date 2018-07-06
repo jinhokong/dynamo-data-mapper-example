@@ -23,9 +23,12 @@
     "@aws/dynamodb-data-mapper": "^0.6.1",
     "@aws/dynamodb-data-mapper-annotations": "^0.6.1",
     "@types/dotenv": "^4.0.3",
+    "@types/request-promise-native": "^1.0.15",
     "@types/uuid": "^3.4.3",
     "aws-sdk": "^2.267.1",
     "dotenv": "^6.0.0",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5",
     "typescript": "^2.9.2",
     "uuid": "^3.3.2"
   }

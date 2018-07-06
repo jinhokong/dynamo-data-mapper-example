@@ -10,7 +10,7 @@ const mapper = new DataMapper({
     accessKeyId: process.env.KEY,
     secretAccessKey: process.env.SECRET_KEY
   }),
-  tableNamePrefix: "test_"
+  tableNamePrefix: "TWIL_"
 });
 
 export default mapper;
