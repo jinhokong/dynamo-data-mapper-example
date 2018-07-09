@@ -27,6 +27,7 @@
     "@types/uuid": "^3.4.3",
     "aws-sdk": "^2.267.1",
     "dotenv": "^6.0.0",
+    "node-fetch": "^2.1.2",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5",
     "typescript": "^2.9.2",
