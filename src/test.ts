@@ -34,7 +34,7 @@ const signFile = () => {
     const params = {
       Bucket: config.aws.bucket,
       Fields: {
-        key: uuidv4()
+        key: uuidv4() + ".png"
       },
       Expires: config.aws.expire,
       Conditions: [
@@ -48,14 +48,14 @@ const signFile = () => {
   });
 };
 
-const sendFile = (filePath, payload) => {
+const sendFile = payload => {
   console.log(payload);
   const form = new FormData();
   form.append("acl", "public-read");
   for (const field in payload.fields) {
     form.append(field, payload.fields[field]);
   }
-  form.append("file", fs.createReadStream(__dirname + `/${filePath}`));
+  form.append("file", fs.createReadStream(__dirname + `/test.png`));
   form.getLength((err, length) => {
     fetch(payload.url, {
       method: "POST",
@@ -73,10 +73,8 @@ const sendFile = (filePath, payload) => {
 
 init();
 
-const file = "test.png";
-const filePath = `${file}`;
 signFile()
   .then(payload => {
-    sendFile(file, payload);
+    sendFile(payload);
   })
   .catch(e => console.warn(e));
